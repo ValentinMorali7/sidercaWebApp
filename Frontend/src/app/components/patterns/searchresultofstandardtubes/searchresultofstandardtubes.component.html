@@ -1,0 +1,84 @@
+
+
+
+
+<table mat-table matSort   [dataSource]="dataSource"  class="mat-elevation-z12" (matSortChange)="sortData($event)" >
+
+    <!-- Position Column -->
+    <ng-container  matColumnDef="cliente"  >
+      <th mat-header-cell *matHeaderCellDef   mat-sort-header="cliente"> Cliente </th>
+      <td mat-cell *matCellDef="let element" (click)="selecciono(element)" >{{element.cliente}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="diametro">
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header="diametro" > Diametro </th>
+      <td mat-cell *matCellDef="let element" (click)="selecciono(element)" > {{element.diametro}} </td>
+    </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="espesor">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="espesor" > Espesor </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.espesor}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="tipo" > Tipo </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.type}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="codigo"> Codigo </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.codigo}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="ciclo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ciclo"> Ciclo </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.ciclo}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="acero">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="acero"> Acero </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.acero}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="grado">
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header="grado"> Grado </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.grado}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="tratamientoTermico">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="tratamientoTermico"> TT </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.tratamientoTermico}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="estado"> Estado </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.estado}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="ubicacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ubicacion"> Ubicacion </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.ubicacion}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="requisitos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="requisitos"> Requisitos </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.requisitos}} </td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="usos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="usos"> Usos </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)">{{element.usos}}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="ultimapasada" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ultimapasada"> UltimaPasadas </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.ultimapasada}} </td>
+      </ng-container>
+      
+      
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"   ></tr>
+  </table>

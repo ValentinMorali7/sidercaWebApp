@@ -1,0 +1,71 @@
+font.descripcion {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #666666;
+	text-decoration: none;
+	text-align: justify;
+  }
+    .input
+    {
+	font-family: verdana, arial, 'sans serif';
+	font-size: 10pt;
+	font-weight: normal;
+	color: #000000;
+	border: 1px solid #999999;
+    }
+	.table
+	{
+	font-family: verdana, arial, 'sans serif';
+	font-size: 6pt;
+	border: 1px solid #999999;
+	}
+
+
+
+	
+	.title
+	{
+	font-family: verdana, arial, 'sans serif';
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	}
+	.text
+	{
+	font-family: verdana, arial, 'sans serif';
+	font-size: 10pt;
+	font-weight: normal;
+	color: #333333;
+	}
+  .button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #666666;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #999999;
+  }
+  .form-group{
+	  display: inline-block;
+	  
+  } 
+  
+  select.form-control{
+
+	
+} 
+
+div.sig {
+	text-align: right;
+  }
+
+  
+div.ant {
+	padding:0px;
+	text-align: left;
+  }

@@ -1,0 +1,29 @@
+<p>Detalles del defecto seleccionado</p>
+
+<table class="atributos" border="0" cellspacing="1" cellpadding="2" width="100%" align="center"   >
+    <tr>
+      <th class="header">Atributo</th>
+      <th class="header">Valor</th>
+      <th class="header">Unidad</th>
+
+    </tr>
+
+    <tr *ngFor="let t of result" >
+        
+        <td class="descripcion" >{{t.Descripcion}}</td>
+        
+        <td> 
+            <input id="verify(t.Descripcion)" disabled  type="number" [(ngModel)]='t.value'   class="input" value="{{t.value}}"   >
+
+        </td>
+        <td> 
+            <input disabled  type="text" [(ngModel)]='t.Unidad'   class="input" value="{{t.Unidad}}"   >
+
+        </td>
+
+    </tr>
+
+
+
+</table>
+    

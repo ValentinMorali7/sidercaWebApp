@@ -1,0 +1,10 @@
+table {
+    width: 70%;
+    left:15%;
+    position: relative;
+  }
+
+  .links{
+cursor: pointer;
+color:blue
+  }

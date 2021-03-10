@@ -1,0 +1,116 @@
+font.descripcion {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #666666;
+	text-decoration: none;
+	text-align: justify;
+  }
+  select.defecto {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	border: 1px solid #666666;
+  }
+  font.defectot {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	background-position: center;
+	vertical-align: middle;
+  }
+  .BaloresLetras {
+	font-family: verdana, arial, 'sans serif';
+	font-size: 10pt;
+    border: 0px solid #999999;
+  }
+    
+  .tabladatos {
+	font-family: verdana, arial, 'sans serif';
+	font-size: 10pt;
+    border: 1px solid #999999;
+  }
+  .tubo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: left;
+    border-top: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+  .valor {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: right;
+    border-top: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+  .valorL {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: right;
+    border-top: 1px solid #999999;
+    border-right: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }  
+  .form-group{
+    display: inline-block;
+    
+} 
+
+
+.button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #666666;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #999999;
+  }
+
+  .button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #666666;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #999999;
+  }
+
+  .eliminacion{
+cursor: pointer;
+
+
+  }
+
+
+  ::ng-deep .my-class .modal-dialog { 
+	max-width: 50%;
+	width: 50%;
+}

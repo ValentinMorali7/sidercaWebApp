@@ -1,0 +1,80 @@
+
+<form [formGroup]="modifypattern"  >
+ 
+
+    <div class="form-row" style="padding:0;margin:0">        
+    
+    
+    <div class="form-group col-3" style="margin:0">
+      <label style="padding:0;margin:0">Patronera</label>
+      <input type="text" formControlName="patronera" class="form-control" />
+
+  </div>
+   
+    
+  <div class="form-group col-3" style="margin:0">
+    <label style="padding:0;margin:0">Cuerpo</label>
+    <input type="text" formControlName="cuerpo" class="form-control" />
+
+ </div>
+
+    
+ <div class="form-group col-3" style="margin:0">
+    <label style="padding:0;margin:0">Nivel</label>
+    <input type="text" formControlName="nivel" class="form-control" />
+
+ </div>
+
+ <div class="form-group col-3" style="margin:0">
+    <label style="padding:0;margin:0">Casilla</label>
+    <input type="text" formControlName="casilla" class="form-control" />
+
+ </div>
+        
+  </div>
+ <!--  ********  -->
+
+ <div class="form-row" style="padding:0;margin:0">        
+    
+    
+    <div class="form-group col-4" style="margin:0">
+        <label style="padding:0;margin:0">Planta/Línea</label>
+        <select  formControlName="plantalinea" class="form-control"  [(ngModel)]='selectedValue'>
+          <OPTION [value]="item.id" [selected]="item.id == selectedValue"   *ngFor="let item of lista">{{item.description}}</OPTION>
+    
+        </select>
+    
+    </div>    
+
+
+    <div class="form-group col-4" style="margin:0">
+        <label style="padding:0;margin:0">Estado</label>
+        <select  formControlName="estado" class="form-control"  [(ngModel)]='selectedValue1'>
+          <OPTION [value]="item.status" [selected]="item.status == selectedValue1" *ngFor="let item of lista3" >{{item.descripcion}}</OPTION>   
+    
+        </select>
+    
+    </div>    
+
+
+
+    <div class="form-group col-4" style="margin:0">
+        <label style="padding:0;margin:0">Motivo</label>
+        <select  formControlName="motivo" class="form-control"  [(ngModel)]='selectedValue2'>
+          <OPTION [value]="item.idMotivo" [selected]="item.idMotivo == selectedValue2"   *ngFor="let item of lista2">{{item.descripcion}}</OPTION>
+    
+        </select>
+    
+    </div>    
+
+
+  </div>
+
+  <div style="text-align: center;margin-top: 20px;">
+    <input class="btn btn-primary mr-3" style="padding:10px;" type="button" Value="Guardar" (click)="save()">
+  </div>
+
+
+
+
+    </form>

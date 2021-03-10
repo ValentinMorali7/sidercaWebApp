@@ -1,0 +1,195 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+
+    <tr>
+        <td bgcolor="#000080" bordercolor="#000080" colspan="2">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+            <IMG id=spsPageTitleIcon alt="" src="../../../../assets/img/spstopic.gif" align="center" width="49" height="49">
+        </td>
+        <td>
+            <font face="Verdana" size="2">Búsqueda de tubos patrones</font>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <font color=#000080 face="Verdana" size="4">TAND</font>
+        </td>
+    </tr>
+</table>
+
+<form [formGroup]="search">
+
+    <div class="card m-1">
+        <h5 class="card-header" style="background-color: #CECEF6">&nbsp;&nbsp;Indique los par&aacute;metros de b&uacute;squeda</h5>
+        <div class="card-body" style="background-color:#F5A9E1">
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Diámetro[mm]</label>
+                    <input type="text" placeholder="Ingrese un nro" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="Verificarnum(1)" />
+                    <!-- con la Expr regular pattern="[0-9]+" se filtran numeros del input -->
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol1" class="form-control" [(ngModel)]="tol1value" (change)="Verificarnum(2)" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Acero</label>
+                    <input type="text" formControlName="steel" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Ciclo</label>
+                    <input type="text" formControlName="cycle" class="form-control" [(ngModel)]="cyclevalue" (change)="Verificarnum(3)" />
+                </div>
+
+            </div>
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Espesor[mm]</label>
+                    <input type="text" placeholder="Ingrese un nro" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="Verificarnum(6)" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol2" class="form-control" [(ngModel)]="tol2value" (change)="Verificarnum(7)" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Grado</label>
+                    <input type="text" formControlName="degree" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Colada</label>
+                    <input type="text" formControlName="steel_casting" class="form-control" [(ngModel)]="steel_castingvalue" (change)="Verificarnum(4)" />
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Longitud[mm]</label>
+                    <input type="text" placeholder="Ingrese un nro" formControlName="length" class="form-control" [(ngModel)]="lengthvalue" (change)="Verificarnum(5)" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol3" class="form-control" [(ngModel)]="tol3value" (change)="Verificarnum(8)" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Trat. Térmico</label>
+                    <input type="text" placeholder="Escriba aqui" formControlName="heat_treatment" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Expediente</label>
+                    <input type="text" placeholder="Escriba aqui" formControlName="record" class="form-control" />
+                </div>
+
+            </div>
+
+
+            <!--   sasdasddad -->
+
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Estado Actual</label>
+                    <select formControlName="actual_state" class="form-control" [(ngModel)]='selectedValue1'>
+        <OPTION [value]="item.status" [selected]="item.status == selectedValue1" *ngFor="let item of lista3" >{{item.descripcion}}</OPTION>   
+      </select>
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Código</label>
+                    <input type="text" placeholder="Escriba aqui" formControlName="pattern_code" class="form-control" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Tipo de tubo</label>
+                    <select formControlName="tubetype" class="form-control" [(ngModel)]='selectedValue2'>
+            <OPTION [value]="item.id"  *ngFor="let item of lista2">{{item.nombre}}</OPTION>
+          </select>
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Usuario</label>
+                    <input type="text" formControlName="user" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Cliente</label>
+                    <input type="text" formControlName="client" class="form-control" />
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">  Planta\Línea</label>
+                    <select formControlName="plant_line" class="form-control" [(ngModel)]='selectedValue3'>
+        <OPTION [value]="item.id" [selected]="item.id == selectedValue3"   *ngFor="let item of lista">{{item.descripcion}}</OPTION>
+      </select>
+                </div>
+
+
+                <div class="form-group col-4">
+                    <label style="padding:0;margin:0"> Ubicación en la línea</label>
+                    <input type="text" formControlName="location_details" class="form-control" />
+                </div>
+
+                <div class="form-group col-6">
+                    <input type="submit" class="btn btn-outline-primary" value="Buscar" (click)="llamar()"> &nbsp;
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <BR>
+
+
+
+
+
+    <div style="text-align: center;">
+
+        <input type="button" class="ui-button.ui-state-active" value="Ir al inicio" onClick="window.location.href='../default.asp'" id=button1 name=button1>
+
+
+    </div>
+
+
+
+</form>
+
+
+<!--
+    <form method="GET" action="busqueda.asp">
+    
+    
+    <input type="submit" class="button" value="Buscar">
+    <input class="button" type="button" value="Ir al inicio" onClick="window.location.href='../default.asp'" id=button1 name=button1>
+    
+    </form>
+    -->

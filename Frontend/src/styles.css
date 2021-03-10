@@ -1,0 +1,238 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.imgPicker
+{
+    width: 1.2rem; 
+    height: 1rem; 
+    cursor: pointer;
+}
+
+.list-group-item-transparent {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: .75rem 1.25rem;
+  margin-bottom: -1px;
+  
+}
+
+.badge-black {
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+
+.btn-danger{
+  border: 1px solid #CC0066 !important;
+  background: #CC0066 !important;
+  color: #FFFFFF;
+  padding:0;
+  box-sizing: border-box;
+  border-radius: 0%;
+}
+
+.btn-primary{
+  border: 1px solid #009900 !important;
+  background: #009900 !important;
+  color: #FFFFFF;
+  padding:0;
+  box-sizing: border-box;
+  border-radius: 0%;
+}
+
+
+.ui-button.ui-state-active {
+  border: 1px solid #009900 !important;
+  background: #009900 !important;
+  color: #FFFFFF;
+}
+.ui-button.ui-state-close {
+  border: 1px solid #CC0066 !important;
+  background: #CC0066 !important;
+  color: #FFFFFF;
+}
+.modal-header-t {
+  background: #CC0066;
+  color: #FFFFFF;
+}
+/*
+.collapse, .collapse.in {
+  display: block !important;
+  transition: all .25s ease-in-out;
+}
+
+.collapse {
+ opacity: 0;
+ height: 0;
+}
+
+.collapse.in {
+  opacity: 1;
+  height: 100%;
+}*/
+
+.filter-container{
+  margin-top: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.main-container{
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* Animaciones */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fast {
+  -webkit-animation-duration: 0.9s;
+  animation-duration: 0.9s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td{
+    padding: 5px;
+}
+
+.colIcon{
+  width: 65px;
+  text-align: center;  
+}
+
+.loading {
+    opacity: 0.6;
+    transition: opacity .8s ease-in-out;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 100;
+}
+
+.loaded {
+    opacity: 0;
+    z-index: -1;
+    height: 0px;
+    width: 0px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hand{
+  color: white;
+}
+.digital{
+  color: white;
+}
+
+strong, span{
+  color:#2f523d;
+}
+
+.clock{
+  color:#ffffff;
+}
+
+.faPdf{
+  color:red;
+}
+
+.faFalseResult{
+  color:red;
+}
+.faTrueResult{
+  color:green;
+}
+
+.faChart{
+  color:#1d3f19;
+}
+
+.marginTop5{
+  margin-top: 5px;
+}
+
+.cursorPointer{
+  cursor: pointer;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color:white;
+}
+
+.line-Height1
+{
+  line-height: 1
+}
+
+#containerPipe
+{
+  min-width: 310px; 
+  max-width: 800px; 
+  min-height:200px; 
+  height: 200px; 
+  margin-top: 0px !important;
+}
+
+@media only screen and (min-width:300px) and (max-width:700px)
+{
+  #containerPipe
+  {
+    margin-top: 150px !important;
+  }
+}

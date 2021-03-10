@@ -1,0 +1,240 @@
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+
+    <tr>
+        <td bgcolor="#000080" bordercolor="#000080" colspan="2">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+            <IMG id=spsPageTitleIcon alt="" src="../../../../assets/img/spstopic.gif" align="center" width="49" height="49">
+        </td>
+        <td>
+            <font face="Verdana" size="2">Búsqueda de tubos patrones</font>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <font color=#000080 face="Verdana" size="4">TAND</font>
+        </td>
+    </tr>
+</table>
+
+<form [formGroup]="search">
+
+    <div class="card m-1">
+        <h5 class="card-header" style="background-color: #CECEF6">&nbsp;&nbsp;Indique los par&aacute;metros de b&uacute;squeda</h5>
+        <div class="card-body" style="background-color:#F5A9E1">
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Diámetro[mm]</label>
+                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="Verificarnum(1)" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol1" class="form-control" [(ngModel)]="tol1value" (change)="Verificarnum(2)" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Acero</label>
+                    <input type="text" formControlName="steel" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Ciclo</label>
+                    <input type="text" formControlName="cycle" class="form-control" [(ngModel)]="cyclevalue" (change)="Verificarnum(3)" />
+                </div>
+
+            </div>
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Espesor[mm]</label>
+                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="Verificarnum(6)" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol2" class="form-control" [(ngModel)]="tol2value" (change)="Verificarnum(7)" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Grado</label>
+                    <input type="text" formControlName="degree" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Colada</label>
+                    <input type="text" formControlName="steel_casting" class="form-control" [(ngModel)]="steel_castingvalue" (change)="Verificarnum(4)" />
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Longitud[mm]</label>
+                    <input type="text" formControlName="length" class="form-control" [(ngModel)]="lengthvalue" (change)="Verificarnum(5)" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Tol(%)</label>
+                    <input type="text" formControlName="tol3" class="form-control" [(ngModel)]="tol3value" (change)="Verificarnum(8)" />
+                </div>
+
+                <div class="form-group col-4" style="margin:0">
+                    <label style="padding:0;margin:0">Trat. Térmico</label>
+                    <input type="text" formControlName="heat_treatment" class="form-control" />
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Expediente</label>
+                    <input type="text" formControlName="record" class="form-control" />
+                </div>
+
+            </div>
+
+
+            <!--   sasdasddad -->
+
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0"> Estado Actual</label>
+                    <select formControlName="actual_state" class="form-control" [(ngModel)]='selectedValue1'>
+        <OPTION [value]="item.status" [selected]="item.status == selectedValue1" *ngFor="let item of lista3" >{{item.descripcion}}</OPTION>   
+      </select>
+                </div>
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Código</label>
+                    <input type="text" formControlName="pattern_code" class="form-control" />
+                </div>
+
+
+
+                <!-- 
+    <div class="form-group col-2" style="margin:0">
+        <label style="padding:0;margin:0">Usuario(Id)</label>
+        <input type="text" formControlName="user" class="form-control" />
+    </div> -->
+
+                <div class="form-group col-2" style="margin:0">
+                    <label style="padding:0;margin:0">Cliente</label>
+                    <input type="text" formControlName="client" class="form-control" />
+                </div>
+                <div class="form-group col-2">
+                    <input type="submit" class="btn btn-outline-primary" value="Buscar" (click)="llamar()"> &nbsp;
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+
+
+
+        </div>
+    </div>
+
+
+    <!-- <div style="text-align: center;">
+
+
+
+        <input type="submit" class="button" value="Buscar" (click)="llamar()"> &nbsp;
+        <input class="button" type="button" value="Ir al inicio" onClick="window.location.href='../default.asp'" id=button1 name=button1>
+
+    </div> -->
+
+    <div style="text-align: center;">
+        <input class="ui-button.ui-state-active" style='width:150px; height:50px' type="button" value="Ir al inicio" onClick="window.location.href='../default.asp'" id=button1 name=button1>
+
+    </div>
+
+
+</form>
+
+
+
+<br>
+
+
+
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z12" (matSortChange)="sortData($event)">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="cliente"> Cliente </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)">{{element.cliente}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="diametro">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="diametro"> Diametro (mm) </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.diametro}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="espesor">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="espesor"> Espesor (mm) </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.espesor}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="tipo"> Tipo </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.tipo}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="codigo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="codigo"> Codigo </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.codigo}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="ciclo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ciclo"> Ciclo </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.ciclo}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="acero">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="acero"> Acero </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.acero}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="grado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="grado"> Grado </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.grado}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="tratamientoTermico">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="tratamientoTermico"> TT </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.tratamientotermico}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="estado"> Estado </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.descripcion}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="ubicacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="ubicacion"> Ubicacion </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.ubicacion}} </td>
+    </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="prioridad">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header="prioridad"> Prioridad </th>
+        <td mat-cell *matCellDef="let element" (click)="selecciono(element)"> {{element.prioridad}} </td>
+    </ng-container>
+    <!-- Name Column -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+
+</table>

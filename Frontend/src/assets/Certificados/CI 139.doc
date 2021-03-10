@@ -1,0 +1,34 @@
+  this.selectedValue = 'Laco 1/Laj 1-2-3' //pre selecciono
+  this.lista.push( new p_l(1,"Laco 1/Laj 1-2-3"));
+  this.lista.push( new p_l(2,"22"));
+
+
+
+class next {
+  constructor(
+    public user?:string, 
+    public plant_line?:number,
+    public tubetype?:number,
+    public template?:number,
+    public client?:string,
+    public notify_auditor?:number,
+    public ot?:string,
+    public diam?:number,
+    public degree?:string,
+    public cycle?:number,
+    public thickness?:number,
+    public steel?:string,
+    public steel_casting?:number,
+    public length?:number,
+    public heat_treatment?:number,
+    public record?:string,
+    public num_trac_bme?:number,
+    public pattern_code?:string,
+    public date?:Date,
+    public check?:boolean,
+    public priority?:number,
+    public time?:Time,
+    public location?:string,
+    ) {
+  }
+}

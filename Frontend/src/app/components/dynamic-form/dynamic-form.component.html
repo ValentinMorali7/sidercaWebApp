@@ -1,0 +1,79 @@
+<form [formGroup]="form" (submit)="submitForm()">
+  <div class="alert alert-danger" *ngIf="v"><strong>(*)Debe completar todos los campos.</strong></div>
+  <div class="alert alert-info" *ngIf="success"><strong>Datos actualizados.</strong></div>
+
+  <ng-template ngFor let-input [ngForOf]="formData">
+    <ng-container [ngSwitch]="input.controlType">
+      <ng-template [ngSwitchCase]="'hidden'">
+        <input [formControlName]="input.controlName" type="hidden" [ngModel]="input?.currentValue" />
+      </ng-template>
+
+      <!--[value] = "setValue(input?.currentValue)"  -->
+      <ng-template *ngIf="input.inputLabel != 'STATUS_TIME'" [ngSwitchCase]="'text'">
+        <div class="form-group">
+          <label [for]="input.controlName"> {{input.inputLabel}}</label>
+        </div>
+        <div class="form-group">
+          <input class="form-control" [formControlName]="input.controlName" [type]="input.valueType"
+            [name]="input.controlName" [ngModel]="input?.currentValue" [required]="input.validators.required"
+            [minlength]="input.validators.minlength" [maxlength]="input.validators.maxlength" />
+          <div class="error" *ngIf="form.get(input.controlName).invalid && 
+                                          (form.get(input.controlName).dirty || form.get(input.controlName).touched)">
+            <div *ngIf="form.get(input.controlName).errors.required">Requerido-->></div>
+            <div *ngIf="form.get(input.controlName).errors.minlength">Largo minimo es {{input.validators.minlength}}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+      <ng-template [ngSwitchCase]="'double'">
+        <div class="form-group">
+          <label [for]="input.controlName"> {{input.inputLabel}}</label>
+        </div>
+        <div class="form-group">
+          <input class="form-control" [formControlName]="input.controlName" type="number" [name]="input.controlName"
+            [ngModel]="input?.currentValue" />
+          <div class="error" *ngIf="form.get(input.controlName).invalid && 
+                                          (form.get(input.controlName).dirty || form.get(input.controlName).touched)">
+            <div *ngIf="form.get(input.controlName).errors.required">Requerido</div>
+            <div *ngIf="form.get(input.controlName).errors.minlength">Largo minimo es {{input.validators.minlength}}
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+      <!-- handling select & radio type inputs -->
+      <ng-template [ngSwitchCase]="'select'">
+        <div class="form-group">
+
+          <label [for]="input.controlName"> {{input.inputLabel}}</label>
+        </div>
+        <div class="form-group">
+          <select class="form-control" [formControlName]="input.controlName" [name]="input.controlName"
+            [id]="input.controlName" [required]="input.validators.required" [(ngModel)]="input.selected"
+            (change)="objChanged(input.controlName)">
+            <option value="-1">{{input.placeholder}}</option>
+            <option *ngFor="let option of input.options" [ngValue]="option.value">{{option.optionName}}</option>
+          </select>
+
+        </div>
+      </ng-template>
+
+      <ng-template [ngSwitchCase]="'radio'">
+
+        <div *ngFor="let option of input.options" class="form-group row">
+          <input [formControlName]="input.controlName" [type]="input.controlType" [name]="input.controlName"
+            [value]="option.value" [required]="input.validators.required">
+          <label [for]="input.controlName"> {{option.optionName}}</label>
+        </div>
+
+      </ng-template>
+
+    </ng-container>
+  </ng-template>
+
+  <button class="ui-button ui-widget ui-state-default ui-button-text-only ui-state-active" type="submit"
+    [disabled]="disableButton">
+    Enviar
+  </button>
+</form>

@@ -1,0 +1,18 @@
+      <div class="modal-header modal-header-t">
+        <h4 class="modal-title"><i class="fa fa-comments" aria-hidden="true"></i> &nbsp; {{title}}</h4>
+        <button type="button" class="close" aria-label="Close"
+         (click)="infoModal.dismiss('Cerrar')">
+         <i class="fa fa-window-close" style="color: white" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+         {{msg}}
+
+      </div>
+      <div class="modal-footer">
+         <button type="button" 
+         (click)="infoModal.dismiss('Cerrar')"
+         class="ui-button ui-widget ui-state-default ui-button-text-only ui-state-active" >
+            Cerrar
+        </button>
+      </div>

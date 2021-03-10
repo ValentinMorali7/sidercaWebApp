@@ -1,0 +1,48 @@
+.borde {
+    border-width : 1px;
+    border-color : #999999;
+    border-style : solid;
+    font-family: verdana, arial, 'sans serif';
+    font-size: 10pt;
+    font-weight: normal;
+    text-decoration: none;
+  }
+  font.campo {	
+    font-family: verdana, arial, 'sans serif';
+    font-size: 10pt;
+    font-weight: normal;
+    text-decoration: none;
+    color : "#444444";
+  }
+  .button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #666666;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #999999;
+  }
+  .form-group{
+    display: inline-block;
+    
+} 
+
+select.form-control{
+
+  
+} 
+table {
+  width: 100%;
+  margin:1rem auto;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 600px;
+  box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+  padding: 1rem;
+}   

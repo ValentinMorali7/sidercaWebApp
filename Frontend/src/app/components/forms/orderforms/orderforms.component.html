@@ -1,0 +1,354 @@
+<table border="0" width="100%" id="table1">
+
+    <tr>
+        <td bgcolor="#000080" colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+            <IMG id=spsPageTitleIcon alt="" src="img/spstopic.gif" align="center" width="49" height="49">
+        </td>
+        <td>
+            &nbsp;
+            <font face="Verdana" style="font-size: 9pt">Formulario de pedido de un nuevo tubo patrón</font>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <font color="#000080" face="Verdana" size="4">TAND</font>
+        </td>
+    </tr>
+</table>
+
+
+
+<form [formGroup]="neworder">
+
+
+    <div class="card m-1">
+        <h5 class="card-header" style="background-color: #CECEF6">Informaci&oacute;n de pedido</h5>
+        <div class="card-body" style="background-color:#F5A9E1">
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Usuario</label>
+                    <input type="text" formControlName="user" class="form-control" />
+
+                </div>
+
+                <div class="form-group col-6" style="margin:0">
+                    <label style="padding:0;margin:0">Planta/Línea</label>
+                    <select formControlName="plant_line" class="form-control" [(ngModel)]='selectedValue' (change)="findtubetype($event.target.value)">
+                    <OPTION [value]="item.description"  id="{{item.id}}" *ngFor="let item of lista">{{item.description}}</OPTION>
+
+                  </select>
+
+                </div>
+            </div>
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Tipo de tubo</label>
+                    <select formControlName="tubetype" class="form-control" [(ngModel)]='selectedValue2'>
+                <OPTION [value]="item.description"  *ngFor="let item of lista2">{{item.description}}</OPTION>
+
+
+              </select>
+
+                </div>
+
+                <div class="form-group col-6" style="margin:0">
+                    <label style="padding:0;margin:0">Plantilla</label>
+                    <select formControlName="template" class="form-control" [(ngModel)]='selectedValue3'>
+                    <OPTION [value]="item.nombre"  *ngFor="let item of lista3">{{item.nombre}}</OPTION>
+    
+
+                  </select>
+
+                </div>
+            </div>
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Cliente</label>
+                    <input type="text" formControlName="client" [style.background-color]="clientcolor" class="form-control" />
+
+                </div>
+
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Notificar al auditor</label>
+                    <select [style.background-color]="notify_auditorcolor" formControlName="notify_auditor" class="form-control">
+                    <OPTION VALUE="0">SI</OPTION>
+                    <OPTION VALUE="1" selected>NO</OPTION>
+  
+                  </select>
+
+                </div>
+
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Auditor</label>
+                    <input type="text" formControlName="auditor" class="form-control" />
+
+                </div>
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">OT-PMANT</label>
+                    <input type="text" formControlName="ot" class="form-control" />
+
+                </div>
+
+                <div class="form-group col-3">
+                    <label style="padding:0;margin:0">Respuesta acústica</label>
+                    <select [style.background-color]="acoustic_responsecolor" formControlName="acoustic_response" class="form-control">
+                    <OPTION VALUE="0">SI</OPTION>
+                    <OPTION VALUE="1">NO</OPTION>
+                  </select>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card m-3">
+        <h5 class="card-header" style="background-color: #CECEF6">Características del tubo virgen</h5>
+        <div class="card-body" style="background-color:#F5A9E1">
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col" style="margin:0">
+                    <input type="checkbox" formControlName="virgin_tube" id="acceptTerms" class="" (click)="changevirgin()" />
+                    <label style="padding:0;margin:5px">A partir de un tubo virgen</label>
+
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Diámetro [mm]</label>
+                    <input type="text" formControlName="diam" class="form-control" [(ngModel)]="diamvalue" (change)="checknum(1)" />
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+                    <label style="padding:0;margin:0">Grado</label>
+                    <input type="text" formControlName="degree" class="form-control" />
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+                    <label style="padding:0;margin:0">Ciclo</label>
+                    <input type="number" [style.background-color]="cyclecolor" [(ngModel)]="cyclevalue" formControlName="cycle" class="form-control" (change)="checknum(2)" />
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+
+                    <button type="submit" class="btn btn-primary mr-1" value="broker" id="brokerboton" (click)="broker()">Broker</button>
+
+                </div>
+
+            </div>
+
+            <!--   sasdasddad   style="display: none;"  -->
+
+
+            <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Espesor [mm]</label>
+                    <input type="text" formControlName="thickness" class="form-control" [(ngModel)]="thicknessvalue" (change)="checknum(3)" />
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+                    <label style="padding:0;margin:0">Acero</label>
+                    <input type="text" formControlName="steel" class="form-control" />
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+                    <label style="padding:0;margin:0">Colada</label>
+                    <input [style.background-color]="steel_castingcolor" type="text" [(ngModel)]="steel_castingvalue" formControlName="steel_casting" (change)="checknum(4)" class="form-control" />
+                </div>
+
+            </div>
+
+
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Longitud [mm]</label>
+                    <input [style.background-color]="lengthcolor" type="text" [(ngModel)]="lengthvalue" formControlName="length" value=0 class="form-control" (change)="checknum(5)" />
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+                    <label style="padding:0;margin:0">Trat. Térmico</label>
+
+                    <select [style.background-color]="heat_treatmentcolor" formControlName="heat_treatment" class="form-control">
+              <OPTION VALUE="0">SI</OPTION>
+              <OPTION VALUE="1">NO</OPTION>
+            </select>
+                </div>
+
+                <div class="form-group col-3" style="margin:0" *ngIf="isvirgin">
+                    <label style="padding:0;margin:0">Expediente</label>
+                    <input type="text" formControlName="record" class="form-control" />
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0" *ngIf="isvirgin">
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Nro. Traceability-BME</label>
+                    <input type="number" formControlName="num_trac_bme" value=0 class="form-control" />
+                </div>
+
+            </div>
+
+
+            <!--   sasdasddad -->
+
+
+
+            <div class="form-row" *ngIf="updateview" style="padding:0;margin:0">
+                <div class="form-group col" style="margin:0">
+                    <input type="checkbox" formControlName="existing_tube" id="acceptTerms2" (click)="changeexisting()" class="" />
+                    <label style="padding:0;margin:5px">A partir de un patrón existente</label>
+                </div>
+
+            </div>
+
+            <!--   sasdasddad -->
+
+            <div class="form-row" style="padding:0;margin:0" *ngIf="isexisting">
+                <div class="form-group col-3">
+                    <label style="padding:0;margin:0">Código del patrón</label>
+                    <input type="text" [ngModel]="pattern_code" formControlName="pattern_code" class="form-control" />
+                </div>
+
+            </div>
+
+
+            <!--   sasdasddad -->
+
+        </div>
+    </div>
+
+    <!--   sasdasddad -->
+    <!--   sasdasddad -->
+    <!--   sasdasddad -->
+    <!--   sasdasddad -->
+
+
+
+
+    <div class="card m-3">
+        <h5 class="card-header" style="background-color: #CECEF6">Fecha en la que necesita el patrón</h5>
+        <div class="card-body" style="background-color:#F5A9E1">
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-3" style="padding:0;margin:0">
+                    <label style="padding:0;margin:0">Fecha</label>
+                    <input [style.background-color]="datecolor" type="date" id="date" formControlName="date" class="form-control" (change)="datechange(dt)" />
+                </div>
+                <!--   sasdasddad -->
+
+                <div class="form-group col-1" style="padding:0;margin-left:20px">
+                    <input style="padding:0;margin:0" type="checkbox" class="form-control" formControlName="check" id="acceptTerms3" class="" />
+                </div>
+
+                <!--   sasdasddad -->
+
+                <div class="form-group col-3" style="padding:0;margin-right:40px">
+                    <label style="padding:0;margin:0">Hora</label>
+                    <input type="time" formControlName="time" class="form-control" />
+                </div>
+
+
+                <div class="form-group col-3" style="margin:0">
+                    <label style="padding:0;margin:0">Prioridad</label>
+
+                    <select formControlName="priority" class="form-control" [(ngModel)]='selectedValue4'>
+    <OPTION [value]="item.description"  *ngFor="let item of lista4">{{item.description}}</OPTION>
+  </select>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--   sasdasddad -->
+    <!--   sasdasddad -->
+    <!--   sasdasddad -->
+    <!--   sasdasddad -->
+
+
+
+    <div class="card m-3">
+        <h5 class="card-header" style="background-color: #CECEF6">Disponibilidad del tubo virgen</h5>
+        <div class="card-body" style="background-color:#F5A9E1">
+
+            <div class="form-row" style="padding:0;margin:0">
+                <div class="form-group col-5">
+                    <label style="padding:0;margin:0">Ubicación</label>
+                    <input type="text" formControlName="location" class="form-control" />
+                </div>
+                <div class="form-group col-3" style="text-align: right;">
+                    <input class="btn btn-outline-primary" style="padding:15px;" id="sigboton" type="submit" Value="Siguiente" (click)="validate()">
+
+                </div>
+
+                <!--   sasdasddad -->
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+    <!-- <div style="text-align: right;">
+
+        <input class="btn btn-outline-primary" style="padding:15px;" id="sigboton" type="submit" Value="Siguiente" (click)="validate()">
+
+    </div> -->
+
+
+
+    <div style="text-align: center;">
+
+        <input class="ui-button.ui-state-active" style="padding:10px" type="button" Value="Inicio" onClick="window.location.href='../default.asp'">
+    </div>
+
+    <input type="hidden" value="0" formControlName="BrokerExec">
+    <input type="hidden" value="0" formControlName="Operacion">
+
+</form>
